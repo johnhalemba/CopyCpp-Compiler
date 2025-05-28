@@ -1,0 +1,306 @@
+// Basic data types and operations test
+void test_data_types() {
+    // Integer operations
+    int a = 10;
+    int b = 20;
+    int sum = a + b;
+    int diff = b - a;
+    int product = a * b;
+    int quotient = b / a;
+    int remainder = b % a;
+
+    print("Integer operations:");
+    print(sum);      // 30
+    print(diff);     // 10
+    print(product);  // 200
+    print(quotient); // 2
+    print(remainder); // 0
+
+    // Floating point operations
+    float32 f1 = 10.5;
+    float32 f2 = 2.5;
+    float64 d1 = 10.5;
+    float64 d2 = 2.5;
+
+    print("Float32 operations:");
+    print(f1 + f2);  // 13.0
+    print(f1 - f2);  // 8.0
+    print(f1 * f2);  // 26.25
+    print(f1 / f2);  // 4.2
+
+    print("Float64 operations:");
+    print(d1 + d2);  // 13.0
+    print(d1 - d2);  // 8.0
+    print(d1 * d2);  // 26.25
+    print(d1 / d2);  // 4.2
+
+    // Boolean operations
+    bool t = true;
+    bool f = false;
+    print("Boolean operations:");
+    print(t && t);  // true
+    print(t && f);  // false
+    print(t || f);  // true
+    print(f || f);  // false
+    print(t ^ f);   // true (XOR)
+    print(t ^ t);   // false (XOR)
+    print(!t);      // false
+    print(!f);      // true
+
+    // String operations
+    string hello = "Hello";
+    string world = "World";
+    print("Strings:");
+    print(hello);
+    print(world);
+}
+
+// Array test
+void test_arrays() {
+    print("Array tests:");
+    int numbers[5];
+
+    // Initialize array
+    int i = 0;
+    while (i < 5) {
+        numbers[i] = i * i;
+        i = i + 1;
+    }
+
+    // Print array
+    i = 0;
+    while (i < 5) {
+        print(numbers[i]);  // 0, 1, 4, 9, 16
+        i = i + 1;
+    }
+
+    // Multi-dimensional array
+    float32 matrix[3][3];
+
+    // Initialize matrix
+    int row = 0;
+    while (row < 3) {
+        int col = 0;
+        while (col < 3) {
+            matrix[row][col] = row + col;
+            col = col + 1;
+        }
+        row = row + 1;
+    }
+
+    // Print matrix
+    print("Matrix contents:");
+    row = 0;
+    while (row < 3) {
+        int col = 0;
+        while (col < 3) {
+            print(matrix[row][col]);
+            col = col + 1;
+        }
+        row = row + 1;
+    }
+}
+
+// Control flow test
+void test_control_flow() {
+    print("Control flow test:");
+
+    // If-else test
+    int a = 10;
+    if (a > 5) {
+        print("a is greater than 5");
+    } else {
+        print("a is less than or equal to 5");
+    }
+
+    // While loop test
+    int i = 0;
+    while (i < 5) {
+        print(i);
+        i = i + 1;
+    }
+
+    // For loop test
+    print("For loop test:");
+    int j = 0;
+    for (j = 0; j < 5; j + 1) {
+        print(j);
+        j = j + 1;
+    }
+
+    // Nested loops test
+    print("Nested loops test:");
+    int x = 0;
+    for (x = 0; x < 3; x + 1) {
+        int y = 0;
+        for (y = 0; y < 3; y + 1) {
+            print(x * 10 + y);
+            y = y + 1;
+        }
+        x = x + 1;
+    }
+}
+
+// Function test
+int factorial(int n) {
+    if (n <= 1) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+int fibonacci(int n) {
+    if (n <= 1) {
+        return n;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+void test_functions() {
+    print("Function tests:");
+
+    print("Factorial of 5:");
+    print(factorial(5));  // 120
+
+    print("Fibonacci of 8:");
+    print(fibonacci(8));  // 21
+}
+
+// Struct test
+struct Point {
+    int x;
+    int y;
+
+    void print_point() {
+        print("Point coordinates:");
+        print(x);
+        print(y);
+    }
+};
+
+void test_structs() {
+    print("Struct test:");
+    Point p;
+    p.x = 10;
+    p.y = 20;
+    p.print_point();
+}
+
+// Class test
+class Shape {
+public:
+    int color;
+
+    void set_color(int c) {
+        color = c;
+    }
+
+    int get_color() {
+        return color;
+    }
+};
+
+class Circle extends Shape {
+public:
+    float64 radius;
+
+    void set_radius(float64 r) {
+        radius = r;
+    }
+
+    float64 get_area() {
+        return 3.14159 * radius * radius;
+    }
+};
+
+void test_classes() {
+    print("Class test:");
+
+    Circle c = new Circle();
+    c.set_color(1);  // Red
+    c.set_radius(5.0);
+
+    print("Circle color:");
+    print(c.get_color());
+
+    print("Circle area:");
+    print(c.get_area());
+}
+
+void test_dynamic_typing() {
+    print("===== Test Dynamicznego Typowania =====");
+
+    var dynamic_var = 10;
+    print("Dynamic var (int):");
+    print(dynamic_var); // Oczekiwane: 10
+
+    dynamic_var = 25.75;
+    print("Dynamic var (float64):");
+    print(dynamic_var); // Oczekiwane: 25.75
+
+    dynamic_var = "Hello, dynamic world!";
+    print("Dynamic var (string):");
+    print(dynamic_var); // Oczekiwane: Hello, dynamic world!
+
+    dynamic_var = true;
+    print("Dynamic var (bool):");
+    print(dynamic_var); // Oczekiwane: true
+
+    print("Test dynamicznego typowania zakończony.");
+}
+
+generator int range_generator(int start, int end) {
+    int current = start;
+    while (current <= end) {
+        yield current;
+        current = current + 1;
+    }
+}
+
+generator int fibonacci_generator(int count) {
+    int a = 0;
+    int b = 1;
+    int i = 0;
+    while (i < count) {
+        if (i == 0) {
+            yield a;
+        } else if (i == 1) {
+            yield b;
+        } else {
+            int next = a + b;
+            yield next;
+            a = b;
+            b = next;
+        }
+        i = i + 1;
+    }
+}
+
+void test_generators() {
+    print("===== Test Funkcji-Generatorów =====");
+    print("Generator zakresu (1 do 5):");
+    foreach (int val in range_generator(1, 5)) {
+        print(val); // Oczekiwane: 1, 2, 3, 4, 5 (każde w nowej linii)
+    }
+    print("Generator Fibonacciego (pierwsze 8 liczb):");
+    foreach (int fib_val in fibonacci_generator(8)) {
+        print(fib_val); // Oczekiwane: 0, 1, 1, 2, 3, 5, 8, 13
+    }
+    var rg = range_generator(10, 12); // Zakładając, że to zwraca jakiś "obiekt generatora"
+    print("Wywołano range_generator (bez iteracji).");
+    var fg = fibonacci_generator(3);
+    print("Wywołano fibonacci_generator (bez iteracji).");
+    print("Test generatorów zakończony.");
+}
+
+print("===== CopyCpp Language Tests =====");
+test_data_types();
+test_arrays();
+test_control_flow();
+test_functions();
+test_structs();
+test_classes();
+test_dynamic_typing();
+test_generators();
+print("All tests completed!");
+
