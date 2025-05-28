@@ -68,7 +68,7 @@ main branch (this README)
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/copycpp-compiler.git
+git clone https://github.com/johnhalemba/copycpp-compiler.git
 cd copycpp-compiler
 
 # Install dependencies
