@@ -1,0 +1,121 @@
+// Przykładowy program w języku CopyCpp
+
+// Deklaracje zmiennych różnych typów
+int a = 10;
+float32 b = 20.5;
+float64 c = 30.75;
+bool flag = true;
+string message = "Hello, SimpleLanguage!";
+
+// Deklaracje tablic i macierzy
+int numbers[5];
+float32 matrix[3][3];
+
+// Inicjalizacja tablicy
+int i = 0;
+while (i < 5) {
+    numbers[i] = i * i;
+    i = i + 1;
+}
+
+// Inicjalizacja macierzy
+int row = 0;
+while (row < 3) {
+    int col = 0;
+    while (col < 3) {
+        matrix[row][col] = row + col;
+        col = col + 1;
+    }
+    row = row + 1;
+}
+
+
+int x = 5;
+int y = 10;
+int sum = x + y;
+int diff = y - x;
+int product = x * y;
+int quotient = y / x;
+int remainder = y % x;
+
+print("Operacje na int:");
+print(sum);      // 15
+print(diff);     // 5
+print(product);  // 50
+print(quotient); // 2
+print(remainder); // 0
+
+// Operacje na liczbach zmiennoprzecinkowych
+float32 fx = 5.5;
+float32 fy = 2.5;
+float32 fsum = fx + fy;
+float32 fdiff = fx - fy;
+float32 fproduct = fx * fy;
+float32 fquotient = fx / fy;
+
+print("Operacje na float32:");
+print(fsum);     // 8.0
+print(fdiff);    // 3.0
+print(fproduct); // 13.75
+print(fquotient); // 2.2
+
+// Operacje logiczne
+bool p = true;
+bool q = false;
+bool and_result = p && q;
+bool or_result = p || q;
+bool xor_result = p ^ q;
+bool not_result = !p;
+
+print("Operacje logiczne:");
+if (and_result) { print("AND: true"); } else { print("AND: false"); }
+if (or_result) { print("OR: true"); } else { print("OR: false"); }
+if (xor_result) { print("XOR: true"); } else { print("XOR: false"); }
+if (not_result) { print("NOT: true"); } else { print("NOT: false"); }
+
+bool var_false = false;
+bool var_true = true;
+
+print("Test short-circuit &&:");
+if (var_false && var_true) {
+    print("Ta wiadomość nie powinna się wyświetlić");
+} else {
+    print("Short-circuit && działa poprawnie");
+}
+
+print("Test short-circuit ||:");
+if (var_true || var_false) {
+    print("Short-circuit || działa poprawnie");
+} else {
+    print("Ta wiadomość nie powinna się wyświetlić");
+}
+
+// Główna część programu
+print("===== Program SimpleLanguage =====");
+print(message);
+
+i = 0;
+while (i < 5) {
+    print(numbers[i]);
+    i = i + 1;
+}
+
+// Operacje na macierzy
+print("Macierz:");
+row = 0;
+while (row < 3) {
+    int col = 0;
+    while (col < 3) {
+        print(matrix[row][col]);
+        col = col + 1;
+    }
+    row = row + 1;
+}
+
+// Odczyt z wejścia
+string user_input;
+print("Wpisz cos:");
+read(user_input);
+print("Wpisałeś:");
+print(user_input);
+
